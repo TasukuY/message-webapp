@@ -4,6 +4,11 @@ module.exports = {
     getMessages: (req, res) => {
         res.status(200).send(messages);
     },
+    deleteMessage: (req, res) => {
+        const index = req.params.id;
+        messages.splice(index, 1);
+        res.status(200).send(messages);
+    }
 }
 
 /*

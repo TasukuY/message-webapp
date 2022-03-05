@@ -14,9 +14,13 @@
     <section class="message-display-section"></section>
     <section class="message-input-section">
         <br><br>
-        <input type="text" id="message-input" placeholder="type message here" />
+        <form class="message-input-form">
+            <input type="text" id="message-input" placeholder="type message here"/>
+            <input type="submit" value="Send" id="send-btn">
+        </form>
         <br><br>
     </section>
+    <button id="delete-btn">delete</button>
     <footer></footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>

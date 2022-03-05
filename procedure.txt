@@ -15,7 +15,6 @@ main.js
         axios.get(endpoint)
             .then(res => {//do something})
             .catch(err => {console.log(err)})
-    4. 
 
 index.js
     1. require express, cors
@@ -33,4 +32,4 @@ controller.js
         functionName: () => {}
         }
     2. connect db.json const valueName = require('./db.json');
-    3. 
+    3. add new json obj to the json obj array -> .push(newObj)
