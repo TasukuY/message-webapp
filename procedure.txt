@@ -3,3 +3,34 @@
     a. connect index.html to style.css <link rel="stylesheet" href="styles.css">
     b. connect index.html to main.js <script src="main.js"></script>
 2. server file -> index.js, controller.js, db.json
+3. in the rootfile directory, npm init -y , npm i express, cors, axios
+
+main.js
+    1. set the baseURL
+    2. after checking the backend with postman, make axios request
+        a. grab required elements from html ifle
+        b. make callback function
+        c. addEventlistener
+    3. Inside the callback function, add axios request
+        axios.get(endpoint)
+            .then(res => {//do something})
+            .catch(err => {console.log(err)})
+    4. 
+
+index.js
+    1. require express, cors
+    2. call express() -> const app = express()
+    3. enable to use json and cors -> app.use(express.json()), app.use(cors())
+    4. listen to the server -> app.listen(SERVER_PORT, () => console.log(`server is running at ${SERVER_PORT}`))
+    5. connect to controller by using destructing valuables -> {funcName} = require('./controller');
+    6. app.get() -> test it with postman  
+
+controller.js
+    1. module.exports = {
+        get: (req, res) => {
+            res.status(200).send(promise);
+        },
+        functionName: () => {}
+        }
+    2. connect db.json const valueName = require('./db.json');
+    3. 
