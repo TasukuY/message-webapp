@@ -2,7 +2,6 @@
 const baseURL = `http://localhost:4040/api/`
 
 const message_display_section = document.querySelector('.message-display-section');
-const message_input = document.getElementById('message-input');
 const send_btn = document.getElementById('send-btn');
 const message_input_form = document.querySelector('.message-input-form');
 const delete_btn = document.getElementById('delete-btn');
@@ -39,4 +38,23 @@ function deleteMessage(){
         .catch(err => console.log(err));
 }
 
+//add message
+function addMessage(e){
+    e.preventDefault();
+    const message_input = document.getElementById('message-input');
+
+    let body = {
+        message: message_input.value
+    }
+    message_input.value = '';
+    axios.post(baseURL + 'add_message', body)
+        .then(res => {
+            message_display_section.textContent = '';
+            const messages = res.data;
+            displayMessages(messages);
+        })
+        .catch(err => console.log(err));
+}
+
 delete_btn.addEventListener('click', deleteMessage);
+message_input_form.addEventListener('submit', addMessage);

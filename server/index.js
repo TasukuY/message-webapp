@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const {getMessages, deleteMessage} = require('./controller');
+const {getMessages, deleteMessage, addMessage} = require('./controller');
 const baseURL = '/api/';
 
 const app = express();
@@ -12,6 +12,7 @@ app.use(cors());
 //sending back promises
 app.get(baseURL + 'messages', getMessages);
 app.delete(baseURL + 'delete/:id', deleteMessage);
+app.post(baseURL + 'add_message', addMessage);
 
 //running the server file 
 const SERVER_PORT = 4040;
