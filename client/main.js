@@ -12,7 +12,13 @@ function displayMessages(messages){
         const messageElement = document.createElement('p');
         messageElement.textContent = messageContent;
         messageElement.id = i;
+        const x_btn = document.createElement('button');
+        x_btn.textContent = 'X';
+        x_btn.id = i;
+        const br = document.createElement('br');
         message_display_section.appendChild(messageElement);
+        message_display_section.appendChild(x_btn);
+        message_display_section.appendChild(br);
     }
 }
 

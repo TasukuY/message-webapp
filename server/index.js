@@ -17,4 +17,3 @@ app.post(baseURL + 'add_message', addMessage);
 //running the server file 
 const SERVER_PORT = 4040;
 app.listen(SERVER_PORT, () => console.log(`server runnning at ${SERVER_PORT}`));
-
